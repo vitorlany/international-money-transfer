@@ -16,3 +16,7 @@ Esse projeto tem a finalidade de simular as regras para transferências internai
 ## Diagrama
 
 ![diagrama](docs/diagrama.drawio.png)
+
+## Todo
+- [ ] Implementar value objects no Domain
+  - [ ] Cuidado com precisão do BigDecimal
