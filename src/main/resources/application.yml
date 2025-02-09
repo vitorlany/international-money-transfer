@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: imt
+  datasource:
+    url: ${DATABASE_URL}/${DATABASE_NAME}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    generate-ddl: true
