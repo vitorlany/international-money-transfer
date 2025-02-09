@@ -1,6 +1,6 @@
-package app.imt.infrastructure.exception;
+package app.imt.infrastructure.exception.handler;
 
-
+import app.imt.infrastructure.exception.GenericException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,7 +17,6 @@ public class GlobalExceptionHandler {
         Map<String, String> response = new HashMap<>();
         response.put("error", ex.getClass().getSimpleName());
         response.put("message", ex.getMessage());
-
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 }

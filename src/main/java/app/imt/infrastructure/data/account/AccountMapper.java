@@ -7,6 +7,7 @@ import org.mapstruct.factory.Mappers;
 @Mapper
 public interface AccountMapper {
     AccountMapper INSTANCE = Mappers.getMapper(AccountMapper.class);
+
     default AccountEntity map(Account account) {
         if (account == null) {
             return null;
@@ -16,4 +17,6 @@ public interface AccountMapper {
                 account.getType().name()
         );
     }
+
+    Account map(AccountEntity account);
 }

@@ -2,6 +2,7 @@ package app.imt.application;
 
 import app.imt.domain.account.Account;
 import app.imt.domain.account.AccountType;
+import app.imt.infrastructure.data.account.AccountEntity;
 import app.imt.infrastructure.data.account.AccountMapper;
 import app.imt.infrastructure.data.account.AccountRepository;
 import app.imt.infrastructure.exception.InvalidFieldException;
@@ -17,11 +18,10 @@ public class AccountApplication {
     private final AccountRepository accountRepository;
 
     public List<Account> getAllAccounts() {
-        final var account = new Account("123", AccountType.COMPANY);
-        final var account1 = new Account("123", AccountType.PERSONAL);
-        final var map = AccountMapper.INSTANCE.map(account);
-        System.out.println(map);
-        return List.of(account, account1);
+        final var entityList = accountRepository.findAll();
+        return entityList.stream()
+                .map(AccountMapper.INSTANCE::map)
+                .toList();
     }
 
     public Account createAccount(final String id, final AccountType type) {
