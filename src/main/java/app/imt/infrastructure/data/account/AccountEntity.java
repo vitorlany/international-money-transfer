@@ -1,4 +1,4 @@
-package app.imt.infrastructure.data.entity;
+package app.imt.infrastructure.data.account;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

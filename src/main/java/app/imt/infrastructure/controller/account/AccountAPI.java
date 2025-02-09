@@ -2,6 +2,7 @@ package app.imt.infrastructure.controller.account;
 
 import app.imt.domain.account.Account;
 import app.imt.domain.account.AccountType;
+import app.imt.infrastructure.controller.account.request.AccountCreateRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,5 +14,5 @@ public interface AccountAPI {
     List<Account> getAllAccounts();
 
     @PostMapping
-    Account createAccount(@RequestBody AccountType type);
+    Account create(@RequestBody AccountCreateRequest accountCreateRequest);
 }
